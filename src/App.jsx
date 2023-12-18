@@ -1,40 +1,32 @@
-import { useState } from "react";
+import { Routes, Route, Outlet } from "react-router-dom";
 import "./categories.style.scss";
-import Directory from "./components/directory/directory.components";
+import Home from "../src/routes/home/home.component";
+
+const Shop = () => {
+  return <h1>I am shop</h1>;
+};
+
+const Navigation = () => {
+  return (
+    <div>
+      <div>
+        <h1>Navigation</h1>
+        <Outlet />
+      </div>
+    </div>
+  );
+};
 
 const App = () => {
-  const [count, setCount] = useState(0);
-  const categories = [
-    {
-      id: 1,
-      title: "Hats",
-      imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
-    },
-    {
-      id: 2,
-      title: "Jackets",
-      imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-    },
-    {
-      id: 3,
-      title: "Sneakers",
-      imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-    },
-    {
-      id: 4,
-      title: "Womens",
-      imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
-    },
-    {
-      id: 5,
-      title: "Mens",
-      imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-    },
-  ];
-
   return (
     <>
-      <Directory categories={categories} />
+      <Routes>
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path="shop" element={<Shop />} />
+        </Route>
+        {/* Make "shop" a sibling route to "home" */}\
+      </Routes>
     </>
   );
 };
