@@ -10,7 +10,7 @@ const Navigation = () => {
   return (
     <div>
       <div>
-        <h1>Navigation</h1>
+        <h1>Navigations</h1>
         <Outlet />
       </div>
     </div>
