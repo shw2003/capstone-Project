@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <>
       <div>
-        {/* <Outlet /> */}
+        <Outlet />
         <Directory categories={categories} />
       </div>
     </>
