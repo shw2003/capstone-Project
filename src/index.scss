@@ -8,11 +8,14 @@ h3,
 h4,
 h5,
 h6,
-button,
 input,
 optgroup,
 select,
 textarea {
   /* Remove font-weight: inherit; */
   font-size: revert;
+}
+
+button {
+  background-color: black !important;
 }
