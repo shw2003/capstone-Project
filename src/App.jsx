@@ -3,9 +3,7 @@ import "./categories.style.scss";
 import Home from "../src/routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.components";
 import Authentication from "./routes/authentication/authentication.component";
-const Shop = () => {
-  return <h1>I am shop</h1>;
-};
+import Shop from "./routes/shop/shop.components";
 
 const App = () => {
   return (
