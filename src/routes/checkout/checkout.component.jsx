@@ -9,6 +9,7 @@ const Checkout = () => {
     cartItems,
     addItemToCart,
     removeCartToItem,
+    cartTotal,
     cartCount,
     clearItemFromCart,
   } = useContext(CartContext);
@@ -50,7 +51,7 @@ const Checkout = () => {
         );
       })}
 
-      <span className="total">Total: {cartCount}</span>
+      <span className="total">Total: ${cartTotal}</span>
     </div>
   );
 };
