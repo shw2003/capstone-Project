@@ -9,7 +9,7 @@ const categoriesPreview = () => {
   const { categoriesMap } = useContext(CategoriesContext);
 
   return (
-    <div className="shop-container">
+    <Fragment>
       {Object.keys(categoriesMap).map((title) => {
         // <Fragment key={title}>
         //   <h2>{title}</h2>
@@ -25,7 +25,7 @@ const categoriesPreview = () => {
           <CategoryPreview key={title} title={title} products={products} />
         );
       })}
-    </div>
+    </Fragment>
 
     // <div className="products-container">
     //   {products.map((product) => (
