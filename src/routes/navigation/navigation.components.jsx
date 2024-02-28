@@ -1,7 +1,12 @@
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 import CrwnLogo from "../../assets/crown.svg";
-import "./navigation.styles.scss";
+import {
+  NavigationContainer,
+  LogoContainer,
+  NavLink,
+  NavLinks,
+} from "./navigation.styles";
 import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase.utils";
 import CartIcon from "../../components/card-icon/cart-icon.component";
@@ -18,27 +23,23 @@ const Navigation = () => {
   };
   return (
     <Fragment>
-      <div className="navigation">
-        <Link className="logo-container" to="/">
+      <NavigationContainer>
+        <LogoContainer to="/">
           <img src={CrwnLogo} alt="Crwn Logo" />{" "}
-        </Link>
-        <div className="nav-links-container">
-          <Link className="nav-link" to="/shop">
-            SHOP
-          </Link>
+        </LogoContainer>
+        <NavLinks>
+          <LogoContainer to="/shop">SHOP</LogoContainer>
           {currentUser ? (
-            <span className="nav-link" onClick={signOutHandler}>
+            <NavLink as="span" onClick={signOutHandler}>
               SIGN OUT
-            </span>
+            </NavLink>
           ) : (
-            <Link className="nav-link" to="/auth">
-              SIGN IN
-            </Link>
+            <LogoContainer to="/auth">SIGN IN</LogoContainer>
           )}
           <CartIcon />
-        </div>
+        </NavLinks>
         {isCartOpen && <CartDropdown />}
-      </div>
+      </NavigationContainer>
       <Outlet />
     </Fragment>
   );
